@@ -29,7 +29,7 @@
     <hr />
 
     <footer>
-      &copy; <?php echo date('Y'); ?> PoleJob
+      &copy; 2017 PoleJob
     </footer>
   </body>
 </html>
