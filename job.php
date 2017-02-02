@@ -49,9 +49,8 @@ $job = $r->fetch();
     <hr />
 
     <article>
-      <h2>Nom du job ici (par exemple "Recherche d'un developpeur Java")</h2>
-
-      ici, on peut mettre la description de ce job.
+      <h2><?php echo $job['title'] ?></h2>
+	     <?php echo $job['description'] ?>
     </article>
   </body>
 </html>
