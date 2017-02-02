@@ -39,17 +39,37 @@ require_once '_include/authenticate-user.php';
       Puis, il faut faire une boucle for afin d'afficher leurs parametres et un lien pour chacun, dynamiquement. -->
 
       <table>
-        <tr>
-          <td>titre du job 1</td>
-          <td>description du job 1</td>
-          <td><a href="job.php?my_token=<?php echo $user['token']; ?>&job_id=1">Detail</a></td>
-        </tr>
 
-        <tr>
-          <td>titre du job 2</td>
-          <td>description du job 2</td>
-          <td><a href="job.php?my_token=<?php echo $user['token']; ?>&job_id=2">Detail</a></td>
-        </tr>
+        <?php
+          $sql = 'SELECT DISTINCT *
+                  FROM `cities`, `jobs`, `users`
+                  WHERE cities.id = jobs.city_id AND
+                        cities.id = users.city_id AND
+                        cities.id = ?';
+
+
+          $req = $db->prepare($sql);
+          $req->execute(array($user['city_id']));
+
+          while ($job = $req->fetch())
+          {
+            ?>
+
+
+
+            <tr>
+              <td><?php echo $job['title'] ?></td>
+
+              <td><a href="job.php?my_token=<?php echo $user['token']; ?>&job_id=<?php echo $job['id']; ?>">description</a></td>
+            </tr>
+
+
+
+
+            <?php
+          }
+        ?>
+
       </table>
     </article>
   </body>
