@@ -41,11 +41,12 @@ require_once '_include/authenticate-user.php';
       <table>
 
         <?php
-          $sql = 'SELECT DISTINCT *
-                  FROM `cities`, `jobs`, `users`
-                  WHERE cities.id = jobs.city_id AND
-                        cities.id = users.city_id AND
-                        cities.id = ?';
+        $sql = 'SELECT *
+                  FROM `jobs`
+                  WHERE city_id = ?';
+
+          $req = $db->prepare($sql);
+          $req->execute(array($user['city_id']));
 
 
           $req = $db->prepare($sql);
