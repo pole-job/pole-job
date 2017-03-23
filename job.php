@@ -41,7 +41,7 @@ $job = $r->fetch();
 
     <nav>
       <ul>
-        <li><a href="dashboard.php?my_token=<?php echo $user['token']; ?>">Dashboard</a></li>
+        <li><a href="dashboard.php?my_token=<?php echo $user['token']; ?>">Offres d'emploi</a></li>
         <li><a href="logout.php?my_token=<?php echo $user['token']; ?>">Se déconnecter</a></li>
         <li><a href="settings.php?my_token=<?php echo $user['token']; ?>">Paramètres personelles</a></li>
       </ul>

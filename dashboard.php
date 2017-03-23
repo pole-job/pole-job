@@ -25,17 +25,16 @@ require_once '_include/authenticate-user.php';
 
     <nav>
       <ul>
-         <li><a href="dashboard.php?my_token=<?php echo $user['token']; ?>">Dashboard</a></li>
-         <li><a href="logout.php?my_token=<?php echo $user['token']; ?>">Se déconnecter</a></li
-          <li><a href="settings.php?my_token=<?php echo $user['token']; ?>">Paramètres personelles</a></li>
-
+         <li><a href="dashboard.php?my_token=<?php echo $user['token']; ?>">Offres d'emploi</a></li>
+         <li><a href="logout.php?my_token=<?php echo $user['token']; ?>">Se déconnecter</a></li>
+         <li><a href="settings.php?my_token=<?php echo $user['token']; ?>">Paramètres personelles</a></li>
       </ul>
     </nav>
 
     <hr />
 
     <article>
-      <h2>Dashboard</h2>
+      <h2>Offres d'emploi</h2>
 
       <!-- Ici, il faut faire un SELECT avec SQL pour obtenir la liste des jobs (dans une variable $jobs).
       Puis, il faut faire une boucle for afin d'afficher leurs parametres et un lien pour chacun, dynamiquement. -->
@@ -46,10 +45,6 @@ require_once '_include/authenticate-user.php';
         $sql = 'SELECT *
                   FROM `jobs`
                   WHERE city_id = ?';
-
-          $req = $db->prepare($sql);
-          $req->execute(array($user['city_id']));
-
 
           $req = $db->prepare($sql);
           $req->execute(array($user['city_id']));
