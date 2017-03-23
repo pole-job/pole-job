@@ -1,3 +1,9 @@
+<?php
+
+require_once '_include/connection.php';
+
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -48,9 +54,23 @@
 
         <div>
           <select name="city_id">
-            <option value="1">Ville 1</option>
-            <option value="2">Ville 2</option>
-            <option value="3">Ville 3</option>
+            <?php
+              // Chargement des villes...
+              $sql = 'SELECT *
+                      FROM `cities`
+                      ORDER BY name';
+              $req = $db->prepare($sql);
+              $req->execute(array());
+              // On affiche chaque ville.
+              while ($city = $req->fetch())
+              {
+                ?>
+
+                <option value="<?php echo $city['id']; ?>"><?php echo $city['name']; ?></option>
+
+                <?php
+              }
+            ?>
           </select>
         </div>
 
