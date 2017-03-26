@@ -7,20 +7,31 @@ require_once '_include/authenticate-user.php';
 <!DOCTYPE html>
 
 <html>
+
   <head>
     <meta charset="utf-8" />
     <title>PoleJob</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
   </head>
 
   <body>
     <header>
       <h1>PoleJob</h1>
 
-      <p>
-        Bonjour, <?php echo $user['full_name'] ?> !
-      </p>
-    </header>
+      <h4>
 
+        Bonjour, <?php echo $user['full_name'] ?> !
+      </h4>
+    </header>
+    <div id="searchbar">
+
+                            <h2>rechercher</h2>
+                    <form action="" class="formulaire">
+                   <input class="champ" type="text" value="rechercher"/>
+                        <input class="bouton" type="button" value="OK" />
+
+                    </form>
+                    </div>
     <hr />
 
     <nav>
@@ -53,9 +64,7 @@ require_once '_include/authenticate-user.php';
           {
             ?>
 
-
-
-            <tr>
+          <tr>
               <td><?php echo $job['title'] ?></td>
 
               <td><a href="job.php?my_token=<?php echo $user['token']; ?>&job_id=<?php echo $job['id']; ?>">description</a></td>
