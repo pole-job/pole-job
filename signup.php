@@ -10,6 +10,7 @@ require_once '_include/connection.php';
   <head>
     <meta charset="utf-8" />
     <title>PoleJob</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
   </head>
 
   <body>
@@ -29,7 +30,7 @@ require_once '_include/connection.php';
     <hr />
 
     <article>
-      <h2>S'inscrire à PoleJob</h2>
+      <h3>S'inscrire à PoleJob</h3>
 
       <form action="signup-post.php" method="post">
         <div>
