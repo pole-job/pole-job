@@ -9,6 +9,7 @@
   <body>
     <header>
       <h1>PoleJob</h1>
+      <link rel="stylesheet" type="text/css" href="style.css"/>
     </header>
 
     <hr />
