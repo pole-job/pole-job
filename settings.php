@@ -10,6 +10,7 @@ require_once '_include/authenticate-user.php';
   <head>
     <meta charset="utf-8" />
     <title>PoleJob</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
   </head>
 
   <body>
