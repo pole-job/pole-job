@@ -36,6 +36,7 @@ $job = $r->fetch();
     <header>
       <h1>PoleJob</h1>
     </header>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
 
     <hr />
 
