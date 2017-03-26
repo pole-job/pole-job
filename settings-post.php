@@ -21,3 +21,4 @@ $r->closeCursor();
 header('Location: settings.php?my_token=' . $user['token']);
 
 ?>
+ 
