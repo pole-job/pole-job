@@ -4,11 +4,13 @@
   <head>
     <meta charset="utf-8" />
     <title>PoleJob</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css"/>
   </head>
 
   <body>
     <header>
-      <h1>PoleJob</h1>
+      <h1>Bienvenue sur PoleJob !</h1>
     </header>
 
     <hr />
@@ -20,11 +22,7 @@
       </ul>
     </nav>
 
-    <hr />
 
-    <article>
-      <h2>Bienvenue sur PoleJob !</h2>
-    </article>
 
     <hr />
 
@@ -33,4 +31,3 @@
     </footer>
   </body>
 </html>
-
