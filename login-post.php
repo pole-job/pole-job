@@ -6,7 +6,7 @@ require_once '_include/connection.php';
 $sql = 'SELECT password
         FROM `users`
         WHERE email = ?';
-
+ 
 $r = $db->prepare($sql);
 
 $r->execute(array($_POST['email']));
