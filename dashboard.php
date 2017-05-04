@@ -27,7 +27,7 @@ require_once '_include/authenticate-user.php';
 
                             <h2>rechercher</h2>
                     <form action="" class="formulaire">
-                   <input class="champ" type="text" value="rechercher"/>
+                   <input class="champ" type="search" value="rechercher"/>
                         <input class="bouton" type="button" value="OK" />
 
                     </form>
