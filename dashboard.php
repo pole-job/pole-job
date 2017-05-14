@@ -19,19 +19,33 @@ require_once '_include/authenticate-user.php';
       <h1>PoleJob</h1>
 
       <h4>
-
         Bonjour, <?php echo $user['full_name'] ?> !
       </h4>
     </header>
+
     <div id="searchbar">
+      <h2>Rechercher une offre</h2>
 
-                            <h2>rechercher</h2>
-                    <form action="" class="formulaire">
-                   <input class="champ" type="search" value="rechercher"/>
-                        <input class="bouton" type="button" value="OK" />
+      <?php
 
-                    </form>
-                    </div>
+      if (isset($_GET['q'])) {
+        $q = $_GET['q'];
+      }
+      else {
+        $q = '';
+      }
+
+      ?>
+
+      <form action="dashboard.php" method="get">
+        <p>
+          <input                type="hidden" name="my_token" value="<?php echo $user['token']; ?>">
+          <input class="champ"  type="search" name="q"        value="<?php echo $q; ?>" placeholder="HTML5, PHP, etc." />
+          <input class="bouton" type="submit"                 value="Recherche Pole-Job" />
+        </p>
+      </form>
+    </div>
+
     <hr />
 
     <nav>
@@ -47,31 +61,36 @@ require_once '_include/authenticate-user.php';
     <article>
       <h2>Offres d'emploi</h2>
 
-      <!-- Ici, il faut faire un SELECT avec SQL pour obtenir la liste des jobs (dans une variable $jobs).
-      Puis, il faut faire une boucle for afin d'afficher leurs parametres et un lien pour chacun, dynamiquement. -->
-
       <table>
 
         <?php
-        $sql = 'SELECT *
-                  FROM `jobs`
-                  WHERE city_id = ?';
+          if (isset($_GET['q'])) {
+            // Recherche toutes les offres qui contiennent la phrase de la recherche...
+            $sql = 'SELECT *
+                      FROM `jobs`
+                      WHERE description LIKE ?';
 
-          $req = $db->prepare($sql);
-          $req->execute(array($user['city_id']));
+            $req = $db->prepare($sql);
+            $req->execute(array("%" . $_GET['q'] . "%"));
+          }
+          else {
+            // Recherche toutes les offres qui sont dans la ville...
+            $sql = 'SELECT *
+                      FROM `jobs`
+                      WHERE city_id = ?';
+
+            $req = $db->prepare($sql);
+            $req->execute(array($user['city_id']));
+          }
 
           while ($job = $req->fetch())
           {
             ?>
 
-          <tr>
+            <tr>
               <td><?php echo $job['title'] ?></td>
-
               <td><a href="job.php?my_token=<?php echo $user['token']; ?>&job_id=<?php echo $job['id']; ?>">description</a></td>
             </tr>
-
-
-
 
             <?php
           }
