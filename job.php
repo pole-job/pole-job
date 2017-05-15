@@ -54,5 +54,13 @@ $job = $r->fetch();
       <h2><?php echo $job['title'] ?></h2>
 	     <?php echo $job['description'] ?>
     </article>
+
+    <h2>POSTULER </h2>
+  <form action="" class="formulaire">
+ <TEXTAREA name="nom" rows=25 cols=120> </TEXTAREA>
+  <INPUT type="button" value="envoyer"
+
+
+  </form>
   </body>
 </html>
