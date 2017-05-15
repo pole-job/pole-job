@@ -1,13 +1,13 @@
 body
 {
 background-size:cover;
-background-color:Peru;
+background-color:grey;
 
 }
 
  title
  {
-   text-align: center;color:Blue
+   text-align: center;color:Sienna
  }
 
 form
@@ -24,7 +24,7 @@ p
 {
 font-size: 3000   px;
 text-align: center;
-color: Blue
+color: Sienna
 
 }
 
@@ -36,12 +36,12 @@ li
 
 h1
 {
-  text-align: center;color: Blue 
+  text-align: center;color:  Sienna
 }
 
 h2
 {
-  text-align: center;color: Blue
+  text-align: center;color: Sienna
 }
 
 form
@@ -54,11 +54,9 @@ h2
 }
 h3
 {
-  text-align: left;color: Blue
+  text-align: left;color:  Sienna
 }
 h4
 {
-  text-align: center;color: Blue 
+  text-align: center;color: Sienna
 }
-
-
