@@ -55,12 +55,11 @@ $job = $r->fetch();
 	     <?php echo $job['description'] ?>
     </article>
 
-    <h2>POSTULER </h2>
-  <form action="" class="formulaire">
- <TEXTAREA name="nom" rows=25 cols=120> </TEXTAREA>
-  <INPUT type="button" value="envoyer"
+    <h2>Postuler</h2>
 
-
-  </form>
+    <form action="mailto:contact+<?php echo $job['id']; ?>@pole-job.com" class="formulaire">
+      <TEXTAREA name="content" rows="25" cols="120"></TEXTAREA>
+      <INPUT type="submit" value="Envoyer" />
+    </form>
   </body>
 </html>
